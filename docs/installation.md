@@ -1,15 +1,20 @@
 ## Installation
 
-- [Installing the main binary](#installing-the-main-binary)
-  - [Using Homebrew](#using-homebrew)
-  - [Using Gentoo](#using-gentoo)
-  - [Using nix](#using-nix)
-  - [Using cargo](#using-cargo)
-  - [Using install script](#using-install-script)
-  - [Downloading pre-compiled binaries](#downloading-pre-compiled-binaries)
-  - [Building from source](#building-from-source)
-  - [Other package managers](#other-package-managers)
-- [Installing the shell widget](#installing-the-shell-widget)
+- [Installation](#installation)
+  - [Installing the main binary](#installing-the-main-binary)
+    - [Using Homebrew](#using-homebrew)
+    - [Using Gentoo](#using-gentoo)
+    - [Using pacman](#using-pacman)
+    - [Using nix](#using-nix)
+    - [Using cargo](#using-cargo)
+    - [Using choco](#using-choco)
+    - [Using install script](#using-install-script)
+    - [Downloading pre-compiled binaries](#downloading-pre-compiled-binaries)
+    - [Building from source](#building-from-source)
+      - [Compile time environment variables](#compile-time-environment-variables)
+    - [Other package managers](#other-package-managers)
+  - [Installing the shell widget](#installing-the-shell-widget)
+    - [Nushell](#nushell)
 
 ### Installing the main binary
 
@@ -135,7 +140,7 @@ xontrib load navi # ← add to your xonsh run control file
 #### Nushell
 
 Due to Nushell's [unique design](https://www.nushell.sh/book/thinking_in_nu.html#think-of-nushell-as-a-compiled-language), it is not possible to `eval` a piece of code dynamically like in other shells therefore the integration process is a bit more involved. Here is an example: 
-1. run `^navi widget nushell | save ($nu.default-config-dir | path join "navi-integration.nu")`
+1. run `navi widget nushell | save ($nu.default-config-dir | path join "navi-integration.nu")`
 2. add the following lines to `config.nu`:
     ```nushell
     source ($nu.default-config-dir | path join "navi-integration.nu")
