@@ -3,10 +3,10 @@ export def navi_widget [] {
     let last_command = ($current_input | navi fn widget::last_command | str trim)
 
     match ($last_command | is-empty) {
-        true => {^navi --print | complete | get "stdout"}
+        true => {navi --print | complete | get "stdout"}
         false => {
             let find = $"($last_command)_NAVIEND"
-            let replacement = (^navi --print --query $'($last_command)' | complete | get "stdout")
+            let replacement = (navi --print --query $'($last_command)' | complete | get "stdout")
 
             match ($replacement | str trim | is-empty) {
                 false => {$"($current_input)_NAVIEND" | str replace $find $replacement}
